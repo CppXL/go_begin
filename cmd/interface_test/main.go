@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"project1/internel/interface_test"
+	"gobegin/internel/interface_test"
 )
 
 type test struct {

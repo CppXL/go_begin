@@ -1,3 +1,3 @@
-module project1
+module gobegin
 
 go 1.18

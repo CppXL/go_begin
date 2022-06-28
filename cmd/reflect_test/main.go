@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"project1/internel/reflect_test"
+	"gobegin/internel/reflect_test"
 	"reflect"
 )
 

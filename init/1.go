@@ -2,8 +2,8 @@ package init
 
 import (
 	"fmt"
-	_ "project1/init1"
-	_ "project1/init2"
+	_ "gobegin/init1"
+	_ "gobegin/init2"
 )
 
 type st struct{}

@@ -1,6 +1,6 @@
 package main
 
-import "project1/internel/slice_test"
+import "gobegin/internel/slice_test"
 
 func main() {
 	slice_test.TSlice()

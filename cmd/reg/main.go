@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"project1/internel/factory/factory"
-	_ "project1/internel/factory/use"
+	"gobegin/internel/factory/factory"
+	_ "gobegin/internel/factory/use"
 )
 
 func main() {

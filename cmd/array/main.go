@@ -1,6 +1,6 @@
 package main
 
-import "project1/internel/array"
+import "gobegin/internel/array"
 
 func main() {
 	array.SingleArray()

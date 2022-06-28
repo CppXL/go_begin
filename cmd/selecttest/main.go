@@ -1,7 +1,7 @@
 package main
 
 import (
-	"project1/internel/selecttest"
+	"gobegin/internel/selecttest"
 )
 
 func main() {

@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"project1/internel/funcprog/closures"
+	"gobegin/internel/funcprog/closures"
 )
 
 func main() {

@@ -1,6 +1,6 @@
 package main
 
-import "project1/internel/jsonTest"
+import "gobegin/internel/jsonTest"
 
 func main() {
 

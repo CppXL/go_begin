@@ -1,6 +1,6 @@
 package main
 
-import "project1/internel/map_test"
+import "gobegin/internel/map_test"
 
 func main() {
 	map_test.TMap()

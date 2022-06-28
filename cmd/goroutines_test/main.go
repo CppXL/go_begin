@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"project1/internel/goroutines_test"
-	"project1/internel/goroutines_test/locker"
-	"project1/internel/goroutines_test/runner_test"
+	"gobegin/internel/goroutines_test"
+	"gobegin/internel/goroutines_test/locker"
+	"gobegin/internel/goroutines_test/runner_test"
 	"runtime"
 )
 

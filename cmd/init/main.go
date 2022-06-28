@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	_ "project1/init"
+	_ "gobegin/init"
 )
 
 func init() {

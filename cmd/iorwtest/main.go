@@ -1,6 +1,6 @@
 package main
 
-import "project1/internel/iorwtest"
+import "gobegin/internel/iorwtest"
 
 func main() {
 	iorwtest.TIotest1()

@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"project1/internel/struct_test"
+	"gobegin/internel/struct_test"
 )
 
 func main() {

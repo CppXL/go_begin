@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"project1/internel/goroutines_test/channel"
+	"gobegin/internel/goroutines_test/channel"
 )
 
 func main() {

@@ -2,7 +2,7 @@ package use
 
 import (
 	"fmt"
-	"project1/internel/factory/factory"
+	"gobegin/internel/factory/factory"
 )
 
 func init() {

@@ -1,6 +1,6 @@
 package main
 
-import "project1/internel/log_test"
+import "gobegin/internel/log_test"
 
 func main() {
 	log_test.TLog()
