@@ -8,31 +8,32 @@ import (
 )
 
 func main() {
-	// 创建文件
-	f, err := os.Create("./out.tar")
+	// create file privilege was 0666
+	f, err := os.Create("out/out.tar")
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 	defer f.Close()
 
-	// 创建 tar.Writer
+	// crgeate tar.Writer
 	nw := tar.NewWriter(f)
 	defer nw.Close()
 
-	fileInfo, err := os.Stat("./test.txt")
+	fileInfo, err := os.Stat("input/test.txt")
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
-	// 写入文件信息
+	// write file info
 	hdr, err := tar.FileInfoHeader(fileInfo, "")
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
+	//
 	hdr.Name = "test.txt"
 	err = nw.WriteHeader(hdr)
 
@@ -40,7 +41,7 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-	fl, err := os.Open("./test.txt")
+	fl, err := os.Open("input/test.txt")
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -51,5 +52,7 @@ func main() {
 		fmt.Println(err)
 		return
 	}
+
+	// 下面是解压过程
 
 }
