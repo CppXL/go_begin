@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"fmt"
+	"unsafe"
 )
 
 func main() {
@@ -83,9 +84,26 @@ func main() {
 
 	// Map
 	a = []byte("aaabbbccc")
-	fmt.Println(string(bytes.Map(func(r rune) rune { return r + 2 }, a)))
+	b = bytes.Map(func(r rune) rune { return r + 2 }, a)
+	fmt.Println(string(b), unsafe.Pointer(&b), unsafe.Pointer(&a))
 
 	//repeat -----
 	fmt.Println(string(bytes.Repeat([]byte("-"), 5)))
+
+	// Replace
+	a = []byte("aaabbbccc")
+	// 第三个参数 返回切片的副本
+	b = bytes.Replace(a, []byte("bbb"), []byte("ddd"), -1)
+	fmt.Println(string(b), string(a))
+	b = bytes.Replace(a, nil, []byte("xx"), -1)
+	fmt.Println(string(b), string(a))
+
+	// Split
+	// aaa bccc
+	a = []byte("aaabbbccc")
+	s = bytes.Split(a, []byte("bb"))
+	for _, v := range s {
+		fmt.Println(string(v))
+	}
 
 } // end main
