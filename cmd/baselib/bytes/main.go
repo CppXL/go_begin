@@ -57,4 +57,6 @@ func main() {
 	fmt.Println(bytes.HasPrefix(a, b))
 	fmt.Println(bytes.HasSuffix(a, c))
 	// bytes.Index()
+
+	// test
 } // end main
