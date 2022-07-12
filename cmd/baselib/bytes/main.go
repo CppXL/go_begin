@@ -34,9 +34,9 @@ func main() {
 	// 10 len(a)+1
 	fmt.Println(bytes.Count(a, b))
 
-	// print aaa bbccc true
 	a = []byte("aaabbbbbccc")
 	b = []byte("bbb")
+	// aaa bbccc true
 	c, d, result := bytes.Cut(a, b)
 	fmt.Println(string(c), string(d), result)
 
@@ -46,6 +46,7 @@ func main() {
 
 	a = []byte("aaabbb")
 	b = []byte("bbb")
+	// false
 	fmt.Println(bytes.EqualFold(a, b))
 
 	// 返回utf-8码点 使用'\t', '\n', '\v', '\f', '\r', ' ', 0x85, 0xA0 分割
@@ -54,9 +55,25 @@ func main() {
 	a = []byte("aaabbbccc")
 	b = []byte("aaa")
 	c = []byte("ccc")
+	// true true
 	fmt.Println(bytes.HasPrefix(a, b))
 	fmt.Println(bytes.HasSuffix(a, c))
-	// bytes.Index()
 
-	// test
+	// 0 6 -1
+	fmt.Println(bytes.Index(a, b))
+	fmt.Println(bytes.Index(a, c))
+	fmt.Println(bytes.Index(a, []byte("ddd")))
+
+	// 3 -1
+	fmt.Println(bytes.IndexByte([]byte("aaabbb"), 'b'))
+	fmt.Println(bytes.IndexByte([]byte("aaabbb"), 'c'))
+
+	a = []byte("aaabbbcccaaa")
+	b = []byte("aaa")
+	// 9
+	fmt.Println(bytes.LastIndex(a, b))
+
+	// Map
+	a = []byte("aaabbbccc")
+
 } // end main
