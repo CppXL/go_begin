@@ -57,4 +57,21 @@ func main() {
 	fmt.Println(bytes.HasPrefix(a, b))
 	fmt.Println(bytes.HasSuffix(a, c))
 	// bytes.Index()
+	// 将二维字节切片使用指定byte连接
+	var s [][]byte = [][]byte{[]byte("foo"), []byte("bar"), []byte("baz")}
+	fmt.Println(string(bytes.Join(s, []byte("-"))))
+
+	// 3
+	fmt.Println(bytes.LastIndex([]byte("go gopher"), []byte("go")))
+
+	// Map
+	a = []byte("aaabbbccc")
+	b = []byte("aaa")
+	c = []byte("ccc")
+	fmt.Println(string(bytes.Map(func(r rune) rune { return r + 2 }, a)))
+
+	//repeat
+	// -----
+	fmt.Println(string(bytes.Repeat([]byte("-"), 5)))
+
 } // end main
