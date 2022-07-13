@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"fmt"
+	"unicode"
 	"unsafe"
 )
 
@@ -85,6 +86,7 @@ func main() {
 	// Map
 	a = []byte("aaabbbccc")
 	b = bytes.Map(func(r rune) rune { return r + 2 }, a)
+	// cccdddeee
 	fmt.Println(string(b), unsafe.Pointer(&b), unsafe.Pointer(&a))
 
 	//repeat -----
@@ -94,16 +96,63 @@ func main() {
 	a = []byte("aaabbbccc")
 	// 第三个参数 返回切片的副本
 	b = bytes.Replace(a, []byte("bbb"), []byte("ddd"), -1)
+	// aaadddccc aaabbbccc
 	fmt.Println(string(b), string(a))
 	b = bytes.Replace(a, nil, []byte("xx"), -1)
+	// xxaxxaxxaxxbxxbxxbxxcxxcxxcxx aaabbbccc
 	fmt.Println(string(b), string(a))
 
 	// Split
 	// aaa bccc
-	a = []byte("aaabbbccc")
-	s = bytes.Split(a, []byte("bb"))
-	for _, v := range s {
-		fmt.Println(string(v))
-	}
+	a = []byte("aaa,bbb,ccc")
+	s = bytes.Split(a, []byte(","))
+	fmt.Printf("%q\n", s)
 
+	// 逐行打印
+	// s = bytes.Split(a, nil)
+	// for _, v := range s {
+	// 	fmt.Println(string(v))
+	// }
+
+	// SplitAfter 原字符串：aaabbbccc 使用bb分割
+	// aaabb bccc
+	a = []byte("aaa,bbb,ccc")
+	s = bytes.SplitAfter(a, []byte(","))
+	fmt.Println(string(a))
+	fmt.Printf("%q\n", s)
+
+	// SplitAfterN
+
+	// 分割成指定数量的切片 -1代表没有数量限制
+	s = bytes.SplitAfterN(a, []byte(","), 100)
+	fmt.Println(string(a))
+	fmt.Printf("%q\n", s)
+
+	// 转成小写 gopher
+	fmt.Println(string(bytes.ToLower([]byte("Gopher"))))
+
+	// 没搞懂
+	fmt.Println(string(bytes.ToLowerSpecial(unicode.CaseRanges, []byte("Gopher"))))
+
+	fmt.Println(string(bytes.ToTitle([]byte("gopher is me"))))
+	fmt.Println(string(bytes.ToTitleSpecial(unicode.CaseRanges, []byte("gopher is me"))))
+
+	// 转成大写
+	fmt.Println(string(bytes.ToUpper([]byte("gopher is me"))))
+
+	// Trim
+	a = []byte("a aaa  foo bar  aaa a")
+	// 去除首尾指定字符串
+	fmt.Println(string(bytes.Trim(a, "a")))
+
+	// TrimFunc
+	fmt.Println(string(bytes.TrimFunc(a, func(r rune) bool {
+		return r == 'b'
+	})))
+
+	fmt.Println(string(bytes.TrimLeft(a, "a")))
+	fmt.Println(string(bytes.TrimRight(a, "a")))
+
+	fmt.Println(string(bytes.TrimSpace(a)))
+	fmt.Println(string(bytes.TrimSuffix(a, []byte("aaa a"))))
 } // end main
