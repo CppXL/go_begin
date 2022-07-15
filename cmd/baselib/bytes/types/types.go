@@ -8,6 +8,7 @@ import (
 
 func main() {
 	var b bytes.Buffer
+	// b = new(bytes.Buffer)
 	b.Write([]byte("hello "))
 	fmt.Fprintf(&b, "world")
 	b.WriteTo(os.Stdout)
