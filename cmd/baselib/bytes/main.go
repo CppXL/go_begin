@@ -154,5 +154,5 @@ func main() {
 	fmt.Println(string(bytes.TrimRight(a, "a")))
 
 	fmt.Println(string(bytes.TrimSpace(a)))
-	fmt.Println(string(bytes.TrimSuffix(a, []byte("aaa a"))))
+	fmt.Println(string(bytes.TrimSuffix(a, []byte("aaa a"))), string(a))
 } // end main
