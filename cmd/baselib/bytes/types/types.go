@@ -32,4 +32,19 @@ func main() {
 	}
 	fmt.Printf("c: %v\n", c)
 	b.WriteTo(os.Stdout)
+	b.Write([]byte("bbb"))
+	d, _ := b.ReadByte()
+	fmt.Printf("d: %v\n", d)
+	b.Write([]byte("ccc"))
+
+	// bbc 直到读到了 ‘c’返回包含c的切片
+	c, _ = b.ReadBytes('c')
+	fmt.Printf("c: %v\n", string(c))
+
+	// b.ReadFrom(os.Stdin)
+	fmt.Printf("b.Bytes(): %v\n", string(b.Bytes()))
+	s, _ := b.ReadString('\n')
+	fmt.Printf("s: %v\n", s)
+
+	b.Reset()
 }
