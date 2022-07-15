@@ -7,12 +7,19 @@ import (
 )
 
 func main() {
+	// buffer 测试
 	var b bytes.Buffer
-	// b = new(bytes.Buffer)
+	// b := new(bytes.Buffer)
+
+	// 向其内写入"hello "
 	b.Write([]byte("hello "))
+
+	// 实现了io.Writer接口
 	fmt.Fprintf(&b, "world")
+
 	b.WriteTo(os.Stdout)
 	b.Write([]byte("aaa"))
+
 	fmt.Printf("b.Bytes(): %v\n", b.Bytes())
 	var a bytes.Buffer = *bytes.NewBufferString("a")
 	fmt.Printf("a.Bytes(): %v\n", a.Bytes())
