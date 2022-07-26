@@ -34,8 +34,8 @@ func main() {
 		return
 	}
 	// print `12` `hello world`
-	fmt.Println(i)
-	fmt.Println(string(scanner))
+
+	fmt.Println(i, string(scanner), len(scanner))
 	i, scanner, err = bufio.ScanLines(bdata[i:], true)
 	if err != nil {
 		fmt.Println(err)
@@ -53,9 +53,8 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-	fmt.Println(i)
-	fmt.Println(scanner)
-	fmt.Println(string(scanner))
+
+	fmt.Println(i, scanner, string(scanner))
 
 	// ScanWords
 	i, scanner, err = bufio.ScanWords(bdata, true)
@@ -64,8 +63,7 @@ func main() {
 		return
 	}
 	// print `7` `你好`
-	fmt.Println(i)
-	fmt.Println(string(scanner))
+	fmt.Println(i, scanner, string(scanner))
 	fmt.Println("begin test MySplit")
 	TSplitFunc()
 }
