@@ -14,7 +14,7 @@ func main() {
 	scanner := bufio.NewScanner(bytes.NewReader(bdata))
 
 	adata := make([]byte, 256)
-	// scanner.Buffer(adata, len(adata))
+	scanner.Buffer(adata, len(adata))
 	for scanner.Scan() {
 		fmt.Println(scanner.Text())
 	}
