@@ -1,5 +1,5 @@
-.idea/*
-.vscode/*
-bin/*
-out/*
+.idea/
+.vscode/
+bin/
+out/
 __debug_bin
